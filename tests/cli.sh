@@ -9,7 +9,8 @@ do
         echo OK
     else
         echo FAIL
-fi
+        exit 1
+    fi
 done < "$input"
 
 # printf "Running vmanage show device status..."
