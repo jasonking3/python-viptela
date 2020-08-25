@@ -8,7 +8,7 @@ install:
 script:
 - "./test.bash"
 - "pip install -e ./"
-- "./build-control.sh
+- "./build-control.sh"
 - "./tests/cli.sh"
 - "./clean-control.sh"
 deploy:
