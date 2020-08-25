@@ -7,7 +7,10 @@ install:
 - pip install -r requirements.txt
 script:
 - "./test.bash"
+- "pip install -e ./"
+- "./build-control.sh
 - "./tests/cli.sh"
+- "./clean-control.sh"
 deploy:
   provider: pypi
   on:
