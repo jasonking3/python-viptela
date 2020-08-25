@@ -5,9 +5,9 @@ python:
 - '3.8'
 install:
 - pip install -r requirements.txt
+- pip install -e ./
 script:
 - "./test.bash"
-- "pip install -e ./"
 - "./build-control.sh"
 - "./tests/cli.sh"
 - "./clean-control.sh"
