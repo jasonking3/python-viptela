@@ -8,9 +8,9 @@ install:
 - pip install -e ./
 script:
 - "./test.bash"
-- "./build-control.sh"
+- "./build-control.bash"
 - "./tests/cli.sh"
-- "./clean-control.sh"
+- "./clean-control.bash"
 deploy:
   provider: pypi
   on:
