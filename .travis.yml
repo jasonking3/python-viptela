@@ -1,16 +1,16 @@
 language: python
+python:
+- '3.6'
+- '3.7'
+- '3.8'
 install:
 - pip install -r requirements.txt
 - pip install -e ./
+script:
+- ./test.bash
 jobs:
   include:
-    - stage: Check format
-      python:
-      - 3.6
-      - 3.7
-      - 3.8
-      script: ./test.bash
-    - stage: Test CLI
+    - stage: "Test CLI"
       python: 3.6
       script:
         - ./build-control.bash
