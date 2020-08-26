@@ -1,21 +1,21 @@
 language: python
 python:
-- '3.6'
-- '3.7'
-- '3.8'
+  - 3.6
+  - 3.7
+  - 3.8
 install:
-- pip install -r requirements.txt
-- pip install -e ./
+  - pip install -r requirements.txt
+  - pip install -e ./
 script:
-- ./test.bash
+  - ./test.bash
 jobs:
   include:
-    - stage: "Test CLI"
+    - stage: test-cli
       python: 3.6
       script:
-        - ./build-control.bash
-        - ./tests/cli.sh
-        - ./clean-control.bash
+      - ./build-control.bash
+      - ./tests/cli.sh
+      - ./clean-control.bash
 deploy:
   provider: pypi
   on:
