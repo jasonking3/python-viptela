@@ -8,9 +8,14 @@ install:
 - pip install -e ./
 script:
 - "./test.bash"
-- "./build-control.bash"
-- "./tests/cli.sh"
-- "./clean-control.bash"
+jobs:
+  include:
+    - stage: "Test CLI"
+      python: 3.6
+      script:
+        - "./build-control.bash"
+        - "./tests/cli.sh"
+        - "./clean-control.bash"
 deploy:
   provider: pypi
   on:
