@@ -13,6 +13,7 @@ jobs:
     - stage: test-cli
       python: 3.6
       script:
+      - ./update-policy.bash
       - ./build-control.bash
       - ./tests/cli.sh
       - ./clean-control.bash
